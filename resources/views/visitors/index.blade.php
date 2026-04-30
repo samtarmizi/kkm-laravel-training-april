@@ -15,6 +15,7 @@
                                 <th>Name</th>
                                 <th>Phone</th>
                                 <th>Email</th>
+                                <th>Created At</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -23,6 +24,7 @@
                                     <td>{{ $visitor->name }}</td>
                                     <td>{{ $visitor->phone }}</td>
                                     <td>{{ $visitor->email }}</td>
+                                    <td>{{ $visitor->created_at->diffForHumans() }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
