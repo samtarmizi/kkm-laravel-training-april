@@ -33,4 +33,10 @@ class VisitorController extends Controller
         // redirect to visitors.index
         return redirect()->route('visitors.index');
     }
+
+    public function show(\App\Models\Visitor $visitor)
+    {
+        // return to views - resources/views/visitors/show.blade.php
+        return view('visitors.show', compact('visitor'));
+    }
 }
