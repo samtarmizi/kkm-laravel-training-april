@@ -16,3 +16,5 @@ Route::post('/visitors/create', [App\Http\Controllers\VisitorController::class, 
 Route::get('/visitors/{visitor}', [App\Http\Controllers\VisitorController::class, 'show'])->name('visitors.show');
 Route::get('/visitors/{visitor}/edit', [App\Http\Controllers\VisitorController::class, 'edit'])->name('visitors.edit');
 Route::post('/visitors/{visitor}/edit', [App\Http\Controllers\VisitorController::class, 'update'])->name('visitors.update');
+
+Route::get('/visitors/{visitor}/delete', [App\Http\Controllers\VisitorController::class, 'delete'])->name('visitors.delete');

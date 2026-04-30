@@ -53,8 +53,15 @@ class VisitorController extends Controller
         $visitor->phone = $request->phone;
         $visitor->email = $request->email;
         $visitor->save();
-        
+
         // redirect to visitors.index
+        return redirect()->route('visitors.index');
+    }
+
+    public function delete(\App\Models\Visitor $visitor)
+    {
+        $visitor->delete();
+        
         return redirect()->route('visitors.index');
     }
 }
