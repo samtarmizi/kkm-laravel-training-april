@@ -39,4 +39,10 @@ class VisitorController extends Controller
         // return to views - resources/views/visitors/show.blade.php
         return view('visitors.show', compact('visitor'));
     }
+
+    public function edit(\App\Models\Visitor $visitor)
+    {
+        // return to views - resources/views/visitors/edit.blade.php
+        return view('visitors.edit', compact('visitor'));
+    }
 }

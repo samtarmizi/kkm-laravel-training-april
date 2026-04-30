@@ -28,6 +28,7 @@
                                     <td>{{ $visitor->created_at->diffForHumans() }}</td>
                                     <td>
                                         <a href="{{ route('visitors.show', $visitor->id) }}" class="btn btn-primary">Show</a>
+                                        <a href="{{ route('visitors.edit', $visitor->id) }}" class="btn btn-warning">Edit</a>
                                     </td>
                                 </tr>
                             @endforeach
