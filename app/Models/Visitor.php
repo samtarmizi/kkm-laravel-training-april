@@ -10,4 +10,9 @@ class Visitor extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'phone', 'email'];
+
+    public function getNameAttribute($value)
+    {
+        return strtoupper($value);
+    }
 }

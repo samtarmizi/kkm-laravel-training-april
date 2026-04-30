@@ -1,0 +1,46 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Blog Edit') }}</div>
+
+                <div class="card-body">
+                    <form method="POST" action="">
+                        @csrf
+                        <div class="row mb-3">
+                            <label for="title" class="col-md-4 col-form-label text-md-end">Title</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="title" value="{{ $blog->title }}">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="description" class="col-md-4 col-form-label text-md-end">Description</label>
+                            <div class="col-md-6">
+                                <textarea class="form-control" name="description">{{ $blog->description }}</textarea>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="author" class="col-md-4 col-form-label text-md-end">Author</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="author" value="{{ $blog->author }}">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="row mb-0">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('Edit') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
