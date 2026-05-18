@@ -65,7 +65,14 @@
                                     <td>{{ $deletedVisitor->phone }}</td>
                                     <td>{{ $deletedVisitor->email }}</td>
                                     <td>{{ $deletedVisitor->deleted_at->diffForHumans() }}</td>
-                                    
+                                    <td>
+                                        <a 
+                                            href="{{ route('visitors.restore', $deletedVisitor) }}" 
+                                            class="btn btn-success"
+                                        >
+                                            Restore
+                                        </a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
