@@ -72,6 +72,13 @@
                                         >
                                             Restore
                                         </a>
+                                        <a 
+                                            onclick="return confirm('Are you sure you want to force delete this visitor?')" 
+                                            href="{{ route('visitors.force-delete', $deletedVisitor) }}" 
+                                            class="btn btn-dark"
+                                        >
+                                            Force Delete
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
