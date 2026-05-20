@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class VisitorController extends Controller
 {
@@ -90,5 +91,15 @@ class VisitorController extends Controller
         $visitor->forceDelete();
 
         return redirect()->route('visitors.index');
+    }
+
+    public function download(\App\Models\Visitor $visitor)
+    {
+        $pdf = Pdf::loadView('visitors.pdf', compact('visitor'));
+        $pdf->setPaper('a4', 'landscape');
+        $pdf->setEncryption("12345", "56789");
+        
+        return $pdf->download('visitor-' . $visitor->id . '-pass.pdf');
+
     }
 }

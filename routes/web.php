@@ -19,6 +19,7 @@ Route::post('/visitors/{visitor}/edit', [App\Http\Controllers\VisitorController:
 Route::get('/visitors/{visitor}/delete', [App\Http\Controllers\VisitorController::class, 'delete'])->name('visitors.delete');
 Route::get('/visitors/{visitor}/restore', [App\Http\Controllers\VisitorController::class, 'restore'])->name('visitors.restore');
 Route::get('/visitors/{visitor}/force-delete', [App\Http\Controllers\VisitorController::class, 'forceDelete'])->name('visitors.force-delete');
+Route::get('/visitors/{visitor}/download', [App\Http\Controllers\VisitorController::class, 'download'])->name('visitors.download');
 
 
 Route::get('/blogs', [App\Http\Controllers\BlogController::class, 'index'])->name('blogs.index');
