@@ -58,5 +58,21 @@ class PermissionTableSeeder extends Seeder
         );
         $subadmin->assignRole($role);
         $subadmin->givePermissionTo('index visitors');
+
+        // create a new user with role 'pegawai' that has permission to index visitor and delete visitor only
+        $pegawai = User::firstOrCreate(
+            ['email' => 'pegawai@tarsoft.com.my'],
+            [
+                'name' => 'Pegawai',
+                'password' => Hash::make('password'),
+            ]
+        );
+        $role = Role::firstOrCreate(
+            ['name' => 'pegawai', 'guard_name' => 'web']
+        );
+        $pegawai->assignRole($role);
+        $pegawai->givePermissionTo('index visitors');
+        $pegawai->givePermissionTo('delete visitors');
+
     }
 }
