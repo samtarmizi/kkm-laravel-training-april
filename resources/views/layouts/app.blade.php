@@ -30,12 +30,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        @can('index visitors')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('visitors.index') }}">Visitors</a>
                         </li>
+                        @endcan
+                        @can('create visitors')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('visitors.create') }}">Create Visitor</a>
                         </li>
+                        @endcan
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('blogs.index') }}">Blogs</a>
                         </li>

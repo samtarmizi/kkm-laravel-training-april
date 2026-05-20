@@ -6,6 +6,15 @@ use Illuminate\Http\Request;
 
 class VisitorController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:index visitors', ['only' => ['index']]);
+        $this->middleware('permission:create visitors', ['only' => ['create', 'store']]);
+        $this->middleware('permission:edit visitors', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:delete visitors', ['only' => ['delete']]);
+    }
+
     public function index()
     {
         // query from table 'visitors' using model Visitor
