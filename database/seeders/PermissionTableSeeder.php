@@ -43,5 +43,20 @@ class PermissionTableSeeder extends Seeder
         );
 
         $user->assignRole($role);
+
+
+        // create a new user with role subadmin that has permission to index visitor only
+        $subadmin = User::firstOrCreate(
+            ['email' => 'subadmin@tarsoft.com.my'],
+            [
+                'name' => 'Subadmin',
+                'password' => Hash::make('password'),
+            ]
+        );
+        $role = Role::firstOrCreate(
+            ['name' => 'subadmin', 'guard_name' => 'web']
+        );
+        $subadmin->assignRole($role);
+        $subadmin->givePermissionTo('index visitors');
     }
 }
