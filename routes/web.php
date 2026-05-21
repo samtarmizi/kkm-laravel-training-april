@@ -29,3 +29,5 @@ Route::get('/blogs/{blog}', [App\Http\Controllers\BlogController::class, 'show']
 Route::get('/blogs/{blog}/edit', [App\Http\Controllers\BlogController::class, 'edit'])->name('blogs.edit');
 Route::post('/blogs/{blog}/edit', [App\Http\Controllers\BlogController::class, 'update'])->name('blogs.update');
 Route::get('/blogs/{blog}/delete', [App\Http\Controllers\BlogController::class, 'delete'])->name('blogs.delete');
+
+Route::get('/export-visitors-excel', [App\Http\Controllers\VisitorController::class, 'export'])->name('visitors.exports');

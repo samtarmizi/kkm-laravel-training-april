@@ -15,6 +15,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <a href="{{ route('visitors.exports') }}" class="btn btn-primary">Export Visitors</a>
                 </div>
             </div>
         </div>
